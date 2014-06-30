@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: psd-parser
+Bundle-SymbolicName: psd-parser
+Bundle-Version: 1.0.0.qualifier
+Export-Package: psd.parser,
+ psd.parser.header,
+ psd.parser.imageresource,
+ psd.parser.layer,
+ psd.parser.layer.additional,
+ psd.parser.layer.additional.effects,
+ psd.parser.object,
+ psd.util

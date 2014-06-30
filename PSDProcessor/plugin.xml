@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<extension 
+		   	id="hu.bme.mit.mobilgen.layoutgenerator.Nature" 
+		   	name="PSD layout generator" 
+		   	point="org.eclipse.core.resources.natures"> 
+      <runtime> 
+         <run class="hu.bme.mit.mobilgen.layoutgenerator.natures.Nature"/> 
+      </runtime> 
+      <builder id="hu.bme.mit.mobilgen.layoutgenerator.Builder"/> 
+   </extension> 
+   <extension
+         id="hu.bme.mit.mobilgen.layoutgenerator.Builder"
+         name="Layout from PSD builder"
+         point="org.eclipse.core.resources.builders">
+      <builder hasNature="true">
+         <run class="hu.bme.mit.mobilgen.layoutgenerator.builders.Builder"/> 
+        </builder>
+   </extension> 
+   
+	 <extension point="org.eclipse.ui.menus">  
+      <menuContribution  
+            allPopups="false"  
+            locationURI="popup:org.eclipse.ui.projectConfigure?after=additions">  
+         <command  
+               commandId="hu.bme.mit.mobilgen.layoutgenerator.builder.addBuilder"  
+               style="push">  
+            <visibleWhen checkEnabled="false">  
+               <and>  
+                  <count value="1">  
+                  </count>  
+                  <iterate ifEmpty="false" operator="and">  
+                     <adapt  
+                           type="org.eclipse.core.resources.IProject">  
+                     </adapt>  
+                  </iterate>  
+                  <iterate operator="and">  
+                     <not>  
+                        <test
+							property="org.eclipse.core.resources.projectNature"
+							value="hu.bme.mit.mobilgen.layoutgenerator.Nature">
+						</test>
+                     </not> 
+                    <test
+						property="org.eclipse.core.resources.projectNature"
+						value="com.android.ide.eclipse.adt.AndroidNature">
+					</test> 
+                  </iterate>  
+               </and>  
+            </visibleWhen>  
+         </command>  
+         <command  
+               commandId="hu.bme.mit.mobilgen.layoutgenerator.builder.removeBuilder"  
+               style="push">  
+            <visibleWhen checkEnabled="false">  
+               <and>  
+                  <count value="1">  
+                  </count>  
+                  <iterate ifEmpty="false" operator="and">  
+                     <adapt type="org.eclipse.core.resources.IProject">  
+                     </adapt>  
+                  </iterate>  
+                  <iterate operator="and">  
+                     <test
+						property="org.eclipse.core.resources.projectNature"
+						value="hu.bme.mit.mobilgen.layoutgenerator.Nature">
+					 </test>
+                  </iterate>  
+               </and>  
+            </visibleWhen>  
+         </command>  
+      </menuContribution>  
+   </extension>
+   <extension 
+   			point="org.eclipse.ui.commands">  
+		<command 
+			defaultHandler="hu.bme.mit.mobilgen.layoutgenerator.commands.AddBuilder" 
+			id="hu.bme.mit.mobilgen.layoutgenerator.builder.addBuilder" 
+			name="Add PSD Layout Builder">  
+	    </command>  
+	    <command 
+	    	defaultHandler="hu.bme.mit.mobilgen.layoutgenerator.commands.RemoveBuilder" 
+	    	id="hu.bme.mit.mobilgen.layoutgenerator.builder.removeBuilder" 
+	    	name="Remove PSD Layout Builder">  
+	    </command>  
+	</extension>   
+</plugin>

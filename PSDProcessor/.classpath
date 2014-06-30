@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="xtend-gen"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="input"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/psd-image"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/psd-parser"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hu.bme.mit.mobilgen.psdprocessor.model"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="lib" path="/Applications/eclipse/plugins/org.apache.log4j_1.2.15.v201012070815.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

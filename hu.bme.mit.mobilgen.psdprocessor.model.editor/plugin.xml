@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated psdstructure -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="psdstructure.presentation.PsdstructureModelWizardID"
+            name="%_UI_PsdstructureModelWizard_label"
+            class="psdstructure.presentation.PsdstructureModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/PsdstructureModelFile.gif">
+         <description>%_UI_PsdstructureModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated psdstructure -->
+      <editor
+            id="psdstructure.presentation.PsdstructureEditorID"
+            name="%_UI_PsdstructureEditor_label"
+            icon="icons/full/obj16/PsdstructureModelFile.gif"
+            extensions="psdstructure"
+            class="psdstructure.presentation.PsdstructureEditor"
+            contributorClass="psdstructure.presentation.PsdstructureActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
